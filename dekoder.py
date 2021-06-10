@@ -36,19 +36,19 @@ df_num = pd.DataFrame()
 if st.button('Oversæt'):
     if len(letters) > 0:
 
-        # if len(secs) > 0:
-        #     for sec in secs:
-        #         number = str(oversaetBogstav(sec, df_over, 0))
-        #         key += number
-        # else:
-        #     key = 0
+        if len(secs) > 0:
+            for sec in secs:
+                number = str(oversaetBogstav(sec, df_over, 0))
+                key += number
+        else:
+            key = 0
 
-        # while len(str(key))>1:
-        #     digi = 0
-        #     for k in str(key):
-        #         digi += int(k)
-        #     key = str(digi)
-        digi = 9
+        while len(str(key))>1:
+            digi = 0
+            for k in str(key):
+                digi += int(k)
+            key = str(digi)
+        #st.write(digi)
 
         for letter in letters:
             number = oversaetBogstav(letter, df_over, digi)
