@@ -53,8 +53,6 @@ if st.button('Oversæt'):
         for letter in letters:
             number = oversaetBogstav(letter, df_over, digi)
             kode += number + '.'
-        st.write(kode)
+        st.code(kode)
     else:
         st.write("Skriv først en besked der skal oversættes")
-
-
