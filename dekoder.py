@@ -22,6 +22,7 @@ def oversaetTal(tegn, df_over, key):
 # Udregn tværsum af nøglen
 def findDigi(secs):
     key =''
+    digi = 0
     if len(secs) > 0:
         for sec in secs:
             number = str(oversaetBogstav(sec, df_over, 0))
@@ -66,18 +67,7 @@ if st.button('Oversæt besked'):
 
     if len(letters) > 0:
 
-        if len(secs) > 0:
-            for sec in secs:
-                number = str(oversaetBogstav(sec, df_over, 0))
-                key += number
-        else:
-            key = 0
-
-        while len(str(key))>1:
-            digi = 0
-            for k in str(key):
-                digi += int(k)
-            key = str(digi)
+        digi = findDigi(secs)
 
         for letter in letters:
             number = oversaetBogstav(letter, df_over, digi)
